@@ -15,6 +15,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   TextEditingController _passController = new TextEditingController();
+  TextEditingController _emailController = new TextEditingController();
   bool obscureText = false;
   @override
   Widget build(BuildContext context) {
@@ -45,6 +46,13 @@ class _LoginState extends State<Login> {
               ),
             ),
             SizedBox(height: 30),
+            LabelledFormInput(
+              placeholder: "Email",
+              keyboardType: "text",
+              controller: _emailController,
+              obscureText: obscureText,
+              label: "Your Email"),
+          SizedBox(height: 15),
             LabelledFormInput(
                 placeholder: "Password",
                 keyboardType: "text",
