@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-
-import 'Screens/splash_screen.dart';
+import 'package:taskez/Screens/Onboarding/onboarding_carousel.dart';
+//import 'Screens/splash_screen.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           systemOverlayStyle: SystemUiOverlayStyle.light,
         ),
       ),
-      home: SplashScreen(),
+      home: OnboardingCarousel(),
     );
   }
 }

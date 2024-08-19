@@ -9,10 +9,6 @@ import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';
 import 'package:taskez/widgets/Navigation/back.dart';
 
 class Login extends StatefulWidget {
-  final String email;
-
-  const Login({Key? key, required this.email}) : super(key: key);
-
   @override
   _LoginState createState() => _LoginState();
 }
@@ -43,7 +39,7 @@ class _LoginState extends State<Login> {
                 text: 'Using  ',
                 style: GoogleFonts.lato(color: HexColor.fromHex("676979")),
                 children: <TextSpan>[
-                  TextSpan(text: widget.email, style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold)),
+                  //TextSpan(text: widget.email, style: TextStyle(color: Colors.white70, fontWeight: FontWeight.bold)),
                   TextSpan(text: "  to login.", style: GoogleFonts.lato(color: HexColor.fromHex("676979"))),
                 ],
               ),

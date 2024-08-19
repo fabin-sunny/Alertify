@@ -6,7 +6,7 @@ import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
 import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';
 import 'package:taskez/widgets/Navigation/back.dart';
 
-import 'login.dart';
+import 'package:taskez/Screens/Auth/login.dart';
 
 class SignUp extends StatefulWidget {
   final String email;
@@ -66,7 +66,7 @@ class _SignUpState extends State<SignUp> {
               height: 60,
               child: ElevatedButton(
                   onPressed: () {
-                    Get.to(() => Login(email: widget.email));
+                    Get.to(() => Login());
                   },
                   style: ButtonStyles.blueRounded,
                   child: Text('Sign Up', style: GoogleFonts.lato(fontSize: 20, color: Colors.white))),

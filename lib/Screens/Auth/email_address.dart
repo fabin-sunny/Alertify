@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'dart:math' as math;
+import 'package:taskez/Screens/Auth/login.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:taskez/Values/values.dart';
 import 'package:taskez/widgets/DarkBackground/darkRadialBackground.dart';
@@ -8,7 +9,6 @@ import 'package:taskez/widgets/Forms/form_input_with%20_label.dart';
 import 'package:taskez/widgets/Navigation/back.dart';
 import 'package:taskez/widgets/Shapes/background_hexagon.dart';
 
-import 'signup.dart';
 
 class EmailAddressScreen extends StatefulWidget {
   @override
@@ -16,6 +16,8 @@ class EmailAddressScreen extends StatefulWidget {
 }
 
 class _EmailAddressScreenState extends State<EmailAddressScreen> {
+  TextEditingController _nameController = new TextEditingController();
+  TextEditingController _passController = new TextEditingController();
   TextEditingController _emailController = new TextEditingController();
   bool obscureText = false;
   @override
@@ -36,7 +38,7 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           NavigationBack(),
           SizedBox(height: 40),
-          Text("What's your\nemail\naddress?",
+          Text("Sign Up",
               style: GoogleFonts.lato(color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold)),
           AppSpaces.verticalSpace20,
           LabelledFormInput(
@@ -45,20 +47,35 @@ class _EmailAddressScreenState extends State<EmailAddressScreen> {
               controller: _emailController,
               obscureText: obscureText,
               label: "Your Email"),
-          SizedBox(height: 40),
+          SizedBox(height: 15),
+          
+            LabelledFormInput(
+                placeholder: "Name",
+                keyboardType: "text",
+                controller: _nameController,
+                obscureText: obscureText,
+                label: "Your Name"),
+            SizedBox(height: 15),
+            LabelledFormInput(
+                placeholder: "Password",
+                keyboardType: "text",
+                controller: _passController,
+                obscureText: obscureText,
+                label: "Your Password"),
+                SizedBox(height: 15),
           Container(
             //width: 180,
             height: 60,
             child: ElevatedButton(
                 onPressed: () {
-                  Get.to(() => SignUp(email: _emailController.text));
+                  Get.to(() => Login());
                 },
                 style: ButtonStyles.blueRounded,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.email, color: Colors.white),
-                    Text('   Continue with Email', style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
+                    Text('   Sign Up', style: GoogleFonts.lato(fontSize: 20, color: Colors.white)),
                   ],
                 )),
           )
